@@ -3,15 +3,14 @@ pipeline {
     agent any
 
     environment {
-        mavenHome = "/opt/apache-maven-3.8.1/bin/mvn"
-        PATH = "$PATH:$mavenHome"
+        PATH = "$PATH"
     }
 
     stages {
         stage ('Build') {
             steps {
                 echo "$PATH"
-                //sh "mvn --version"
+                sh "mvn --version"
                 sh "docker --version"
                 echo "Build"
                 echo "PATH - $PATH"
