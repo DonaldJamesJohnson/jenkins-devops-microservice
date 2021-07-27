@@ -1,6 +1,11 @@
 pipeline {
 	//agent { docker { image 'maven:3.8.1'} }
     agent any
+
+    environment {
+        PATH = "$PATH"
+    }
+
     stages {
         stage ('Build') {
             steps {
